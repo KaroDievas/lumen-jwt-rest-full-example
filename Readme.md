@@ -11,5 +11,8 @@
 
 ### Postman collection
 
-Postman collection is provide in file job.postman_collection
+Postman collection is provided in file job.postman_collection
 
+### Configuration
+
+For working email sending need to configure proper mailer settings in .env file.

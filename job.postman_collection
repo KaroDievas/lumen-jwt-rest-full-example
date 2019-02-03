@@ -1,0 +1,398 @@
+{
+	"info": {
+		"_postman_id": "82e1e210-6331-4947-81fa-afe3a3927547",
+		"name": "Teltonika",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost/api/user/password-remember",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"hkoss@klocko.com\",\n\t\"password\": 12345 \n}"
+				},
+				"url": {
+					"raw": "http://localhost/users?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsdW1lbi1qd3QiLCJzdWIiOjEsImlhdCI6MTU0OTA2MDM0NywiZXhwIjoxNTQ5MDYzOTQ3fQ.0yDJAmphOw9xvNNBTM-8jTkBmD-C2kVoxSHd4zEix34",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsdW1lbi1qd3QiLCJzdWIiOjEsImlhdCI6MTU0OTA2MDM0NywiZXhwIjoxNTQ5MDYzOTQ3fQ.0yDJAmphOw9xvNNBTM-8jTkBmD-C2kVoxSHd4zEix34"
+						}
+					]
+				},
+				"description": "Generates password recovery token and sends email"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/api/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"hkoss@klocko.com\",\n\t\"password\": 12345 \n}"
+				},
+				"url": {
+					"raw": "http://localhost/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				},
+				"description": "gets access token for user by email and password"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/api/todo/create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsdW1lbi1qd3QiLCJzdWIiOjEsImlhdCI6MTU0OTEyNTc4OSwiZXhwIjoxNTQ5MTI5Mzg5fQ.FoMttkiPmcYdc5aiHWj_J5XOZAnsHyISsvAGbsVSBac",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"test\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost/api/create?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsdW1lbi1qd3QiLCJzdWIiOjEsImlhdCI6MTU0OTEzMTg4OSwiZXhwIjoxNTQ5MzQ3ODg5fQ.ZJY_z0RfHpL-RkoiUtQ9_JQpuJKWIFjhxZricXkEJi4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"create"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsdW1lbi1qd3QiLCJzdWIiOjEsImlhdCI6MTU0OTEzMTg4OSwiZXhwIjoxNTQ5MzQ3ODg5fQ.ZJY_z0RfHpL-RkoiUtQ9_JQpuJKWIFjhxZricXkEJi4"
+						}
+					]
+				},
+				"description": "Creates todo for current user"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/api/todo/update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsdW1lbi1qd3QiLCJzdWIiOjEsImlhdCI6MTU0OTEyNTc4OSwiZXhwIjoxNTQ5MTI5Mzg5fQ.FoMttkiPmcYdc5aiHWj_J5XOZAnsHyISsvAGbsVSBac",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"test\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost/api/todo/update/4?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsdW1lbi1qd3QiLCJzdWIiOjEsImlhdCI6MTU0OTEzMTg4OSwiZXhwIjoxNTQ5MzQ3ODg5fQ.ZJY_z0RfHpL-RkoiUtQ9_JQpuJKWIFjhxZricXkEJi4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"todo",
+						"update",
+						"4"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsdW1lbi1qd3QiLCJzdWIiOjEsImlhdCI6MTU0OTEzMTg4OSwiZXhwIjoxNTQ5MzQ3ODg5fQ.ZJY_z0RfHpL-RkoiUtQ9_JQpuJKWIFjhxZricXkEJi4"
+						}
+					]
+				},
+				"description": "updates todo by id. Updates only if todo belong to current user"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/api/user/password-change",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsdW1lbi1qd3QiLCJzdWIiOjEsImlhdCI6MTU0OTEyNTc4OSwiZXhwIjoxNTQ5MTI5Mzg5fQ.FoMttkiPmcYdc5aiHWj_J5XOZAnsHyISsvAGbsVSBac",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"test\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost/api/todo/update/4?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsdW1lbi1qd3QiLCJzdWIiOjEsImlhdCI6MTU0OTEzMTg4OSwiZXhwIjoxNTQ5MzQ3ODg5fQ.ZJY_z0RfHpL-RkoiUtQ9_JQpuJKWIFjhxZricXkEJi4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"todo",
+						"update",
+						"4"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsdW1lbi1qd3QiLCJzdWIiOjEsImlhdCI6MTU0OTEzMTg4OSwiZXhwIjoxNTQ5MzQ3ODg5fQ.ZJY_z0RfHpL-RkoiUtQ9_JQpuJKWIFjhxZricXkEJi4"
+						}
+					]
+				},
+				"description": "Changes password to newly provided by recovery token"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/api/todo/my-todo-list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsdW1lbi1qd3QiLCJzdWIiOjEsImlhdCI6MTU0OTEyNTc4OSwiZXhwIjoxNTQ5MTI5Mzg5fQ.FoMttkiPmcYdc5aiHWj_J5XOZAnsHyISsvAGbsVSBac",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"test\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost/api/todo/my-todo-list?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsdW1lbi1qd3QiLCJzdWIiOjEsImlhdCI6MTU0OTEzMTg4OSwiZXhwIjoxNTQ5MzQ3ODg5fQ.ZJY_z0RfHpL-RkoiUtQ9_JQpuJKWIFjhxZricXkEJi4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"todo",
+						"my-todo-list"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsdW1lbi1qd3QiLCJzdWIiOjEsImlhdCI6MTU0OTEzMTg4OSwiZXhwIjoxNTQ5MzQ3ODg5fQ.ZJY_z0RfHpL-RkoiUtQ9_JQpuJKWIFjhxZricXkEJi4"
+						}
+					]
+				},
+				"description": "Get's all todo list by current user"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/api/audit-log/get-all",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "token",
+						"type": "text",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsdW1lbi1qd3QiLCJzdWIiOjEsImlhdCI6MTU0OTEyNTc4OSwiZXhwIjoxNTQ5MTI5Mzg5fQ.FoMttkiPmcYdc5aiHWj_J5XOZAnsHyISsvAGbsVSBac",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"test\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost/api/audit-log/get-all?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsdW1lbi1qd3QiLCJzdWIiOjEsImlhdCI6MTU0OTEzMTg4OSwiZXhwIjoxNTQ5MzQ3ODg5fQ.ZJY_z0RfHpL-RkoiUtQ9_JQpuJKWIFjhxZricXkEJi4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"audit-log",
+						"get-all"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsdW1lbi1qd3QiLCJzdWIiOjEsImlhdCI6MTU0OTEzMTg4OSwiZXhwIjoxNTQ5MzQ3ODg5fQ.ZJY_z0RfHpL-RkoiUtQ9_JQpuJKWIFjhxZricXkEJi4"
+						}
+					]
+				},
+				"description": "Get's all audit log. Available only for admin."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/api/todo/all-todo-list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "token",
+						"type": "text",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsdW1lbi1qd3QiLCJzdWIiOjEsImlhdCI6MTU0OTEyNTc4OSwiZXhwIjoxNTQ5MTI5Mzg5fQ.FoMttkiPmcYdc5aiHWj_J5XOZAnsHyISsvAGbsVSBac",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"test\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost/api/todo/all-todo-list?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsdW1lbi1qd3QiLCJzdWIiOjEsImlhdCI6MTU0OTEzMTg4OSwiZXhwIjoxNTQ5MzQ3ODg5fQ.ZJY_z0RfHpL-RkoiUtQ9_JQpuJKWIFjhxZricXkEJi4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"todo",
+						"all-todo-list"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsdW1lbi1qd3QiLCJzdWIiOjEsImlhdCI6MTU0OTEzMTg4OSwiZXhwIjoxNTQ5MzQ3ODg5fQ.ZJY_z0RfHpL-RkoiUtQ9_JQpuJKWIFjhxZricXkEJi4"
+						}
+					]
+				},
+				"description": "Gets all todo list available only if user is admin"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/api/todo/remove",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "token",
+						"type": "text",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsdW1lbi1qd3QiLCJzdWIiOjEsImlhdCI6MTU0OTEyNTc4OSwiZXhwIjoxNTQ5MTI5Mzg5fQ.FoMttkiPmcYdc5aiHWj_J5XOZAnsHyISsvAGbsVSBac",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost/api/remove/2?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsdW1lbi1qd3QiLCJzdWIiOjEsImlhdCI6MTU0OTEzMTg4OSwiZXhwIjoxNTQ5MzQ3ODg5fQ.ZJY_z0RfHpL-RkoiUtQ9_JQpuJKWIFjhxZricXkEJi4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"remove",
+						"2"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsdW1lbi1qd3QiLCJzdWIiOjEsImlhdCI6MTU0OTEzMTg4OSwiZXhwIjoxNTQ5MzQ3ODg5fQ.ZJY_z0RfHpL-RkoiUtQ9_JQpuJKWIFjhxZricXkEJi4"
+						}
+					]
+				},
+				"description": "removed todo by id. Available only if user is admin"
+			},
+			"response": []
+		}
+	]
+}
