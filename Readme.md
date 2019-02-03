@@ -1,7 +1,7 @@
 ## Lumen-jwt-rest-full-api
 
 ### Installation (windows)
-`git clone https://`
+`git clone https://github.com/KaroDievas/lumen-jwt-rest-full-example.git`
 
 `docker-compose up --build -d`
 
